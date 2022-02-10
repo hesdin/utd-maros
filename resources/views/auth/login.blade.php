@@ -30,7 +30,7 @@
       <div class="col-md-10">
         <div class="card card-transparent shadow-none d-flex justify-content-center mb-0 auth-card">
         <div class="card-body">
-          <a href="../../dashboard/index.html"
+          <a href="/"
           class="navbar-brand d-flex align-items-center mb-3">
           <!--Logo start-->
           <svg width="30" class="" viewBox="0 0 30 30" fill="none"
@@ -50,36 +50,33 @@
           <h2 class="mb-2 text-center">Log In</h2>
           <p class="text-center">Login to stay connected.</p>
 
+
+          <form action="{{ route('login.proses') }}" method="POST">
+          @csrf
+          <div class="row justify-content-center">
+
           @if (Session::get('fail'))
-          <div class="alert alert-danger alert-solid alert-dismissible fade show p-2"
+          <div class="col-lg-8">
+            <div class="alert alert-danger alert-solid alert-dismissible fade show p-2"
             role="alert">
             <span>{{ Session::get('fail') }}</span>
             <button type="button" class="btn-close btn-close-white btn-sm pb-2"
             data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
+          </div>
           @endif
-
-          <form action="{{ route('login.proses') }}" method="POST">
-          @csrf
-          <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-8">
             <div class="form-group">
               <label for="email" class="form-label">Email</label>
               <input type="email" name="email" class="form-control" id="email"
-              aria-describedby="email" placeholder=" ">
-                @error('email')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
+              aria-describedby="email" placeholder="" autocomplete="off" required>
             </div>
             </div>
-            <div class="col-lg-12">
+            <div class="col-lg-8">
             <div class="form-group">
               <label for="password" class="form-label">Password</label>
               <input type="password" name="password" class="form-control"
-              id="password" aria-describedby="password" placeholder=" ">
-                @error('email')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
+              id="password" aria-describedby="password" placeholder=" " required>
 
             </div>
             </div>

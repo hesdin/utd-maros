@@ -48,10 +48,10 @@
                                         <td>
                                             <a class="btn btn-sm btn-icon text-danger" data-bs-toggle="tooltip" title=""
                                                 href="{{ route('golongan.hapus', $golongan->id) }}"
-                                                onclick="event.preventDefault();document.getElementById('delete').submit();"
+                                                onclick="event.preventDefault();document.getElementById('delete{{ $loop->iteration }}').submit();"
                                                 data-bs-original-title="Delete">
                                                 <form action="{{ route('golongan.hapus', $golongan->id) }}" method="POST"
-                                                    class="d-none" id="delete">@csrf @method('DELETE')</form>
+                                                    class="d-none" id="delete{{ $loop->iteration }}">@csrf @method('DELETE')</form>
                                                 <span class="btn-inner">
                                                     <svg width="20" viewBox="0 0 24 24" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
@@ -91,22 +91,27 @@
                     <h5 class="modal-title" id="exampleModalLabel">Tambah Data</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <form action="{{ route('golongan.tambah') }}" method="POST">
-                        @csrf
+                <form action="{{ route('golongan.tambah') }}" method="POST">
+                    @csrf
+                    <div class="modal-body">
                         <div class="form-group">
                             <label class="form-label" for="nama">Nama Golongan</label>
-                            <input type="text" class="form-control" name="nama" placeholder="A">
+                            <input type="text" class="form-control" name="nama" placeholder="Contoh: AB" autocomplete="off" required>
                         </div>
+
                         <div class="form-group">
                             <label class="form-label" for="resus">Rhesus Golongan</label>
-                            <input type="text" class="form-control" name="resus" placeholder="Positif (+)">
+                            <select name="resus" id="resus" class="form-select mb-3 shadow-none" required>
+                                <option selected disabled>Pilih</option>
+                                <option value="Positif (+)">Positif (+)</option>
+                                <option value="Negatif (-)">Negatif (-)</option>
+                            </select>
                         </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-sm btn-primary">Tambah</button>
-                    <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal">Batal</button>
-                </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-sm btn-primary">Tambah</button>
+                        <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal">Batal</button>
+                    </div>
                 </form>
             </div>
         </div>

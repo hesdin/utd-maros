@@ -27,7 +27,7 @@ class AdminController extends Controller
 
     public function golongan()
     {
-        $data = golongan::all();
+        $data = golongan::orderBy('nm_golongan')->orderBy('resus_golongan', 'DESC')->get();
 
         return view('admin.golongan', ['data' => $data]);
     }
@@ -37,7 +37,7 @@ class AdminController extends Controller
 
         $golonganDarah = new golongan();
 
-        $golonganDarah->nm_golongan = $request->nama;
+        $golonganDarah->nm_golongan = strtoupper($request->nama);
         $golonganDarah->resus_golongan = $request->resus;
 
         $golonganDarah->save();
