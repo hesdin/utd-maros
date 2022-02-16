@@ -138,12 +138,12 @@
 
                         <div class="form-group">
                             <label class="form-label" for="pelaksana">Pelaksana</label>
-                            <input type="text" class="form-control" name="pelaksana">
+                            <input type="text" class="form-control" name="pelaksana" autocomplete="off">
                         </div>
 
                         <div class="form-group">
                             <label class="form-label" for="alamat">Alamat Lengkap</label>
-                            <input type="text" class="form-control" name="alamat">
+                            <input type="text" class="form-control" name="alamat" autocomplete="off">
                         </div>
                 </div>
                 <div class="modal-footer">

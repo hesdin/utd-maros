@@ -88,11 +88,11 @@
             @csrf
             <div class="form-group">
               <label class="form-label" for="nama">Nama Tipe</label>
-              <input type="text" class="form-control" name="nama">
+              <input type="text" class="form-control" name="nama" autocomplete="off">
             </div>
             <div class="form-group">
               <label class="form-label" for="singkatan">Singkatan Tipe</label>
-              <input type="text" class="form-control" name="singkatan">
+              <input type="text" class="form-control" name="singkatan" autocomplete="off">
             </div>
           </div>
           <div class="modal-footer">

@@ -20,7 +20,6 @@ Route::get('/', function() {
 });
 
 Route::middleware('auth')->group(function() {
-
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 
     Route::get('/golongan', [AdminController::class, 'golongan'])->name('golongan');
@@ -49,12 +48,9 @@ Route::middleware('auth')->group(function() {
     Route::put('/manajemen-user/update/{id}', [AdminController::class, 'manajemenUserUpdate'])->name('manajemen.user.update');
 
     Route::delete('/manajemen-user/{id}', [AdminController::class, 'manajemenUserHapus'])->name('manajemen.user.hapus');
+
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
-
-
-
-
-
 
 
 

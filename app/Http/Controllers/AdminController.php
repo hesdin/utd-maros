@@ -10,6 +10,7 @@ use App\Models\Pendonor;
 use App\Models\stok;
 use App\Models\tipe;
 use App\Models\User;
+use Carbon\Carbon;
 
 class AdminController extends Controller
 {
@@ -88,8 +89,8 @@ class AdminController extends Controller
 
     public function stokDarah()
     {
-        $sDarah = stok::all();
-        $gDarah = golongan::all();
+        $sDarah = stok::orderBy('golongan_id')->get();
+        $gDarah = golongan::orderBy('nm_golongan')->orderBy('resus_golongan', 'DESC')->get();
         $tGDarah = tipe::all();
 
         $data = [
@@ -117,7 +118,7 @@ class AdminController extends Controller
     public function stokDarahEdit($id)
     {
         $sDarah = stok::findOrFail($id);
-        $gDarah = golongan::all();
+        $gDarah = golongan::orderBy('nm_golongan')->orderBy('resus_golongan', 'DESC')->get();
         $tGDarah = tipe::all();
 
         $data = [
@@ -171,7 +172,7 @@ class AdminController extends Controller
 
     public function jadwalDonor()
     {
-        $jDonor = Jadwal::all();
+        $jDonor = Jadwal::orderBy('tgl', "DESC")->get();
 
         return view('admin.jadwal-donor', ['jDonor' => $jDonor]);
     }
