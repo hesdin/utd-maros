@@ -36,7 +36,7 @@ class AuthController extends Controller
     {
         $file = $req->file('avatar');
         if ($file) {
-            $filename = md5($req->username).'.'.$file->getClientOriginalExtension();
+            $filename = md5($req->email).'.'.$file->getClientOriginalExtension();
         }
 
         $u = new User();

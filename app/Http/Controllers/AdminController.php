@@ -11,7 +11,7 @@ use App\Models\Pendonor;
 use App\Models\stok;
 use App\Models\tipe;
 use App\Models\User;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -214,6 +214,12 @@ class AdminController extends Controller
         return view('admin.chat.index', ['data' => $data]);
     }
 
+    public function chatUserData()
+    {
+        $u = Chat::orderBy('created_at', 'DESC')->distinct()->get(['user']);
+        return view('admin.chat.user-data', ['users' => $u]);
+    }
+
     public function chatSend(Request $req, $id)
     {
         $c = new Chat();
@@ -262,7 +268,7 @@ class AdminController extends Controller
 
 
         if ($request->hasFile('foto')) {
-            $destination = public_path('assets/images/profiles/' . $user->foto);
+            $destination = public_path('f/avatar/' . $user->foto);
             if (File::exists($destination)) {
                 File::delete($destination);
             }
@@ -270,7 +276,7 @@ class AdminController extends Controller
             $foto = $request->file('foto');
             $extention = $foto->getClientOriginalExtension();
             $namaFoto = time() . '-' . $request->nama . '.' . $extention;
-            $foto->move(public_path('assets/images/profiles'), $namaFoto);
+            $foto->move(public_path('f/avatar'), $namaFoto);
 
             $user->foto = $namaFoto;
         }
@@ -284,9 +290,11 @@ class AdminController extends Controller
 
     public function manajemenUserHapus($id)
     {
-        $user = User::findOrFail($id);
-
-        $user->delete();
+        $u = User::find($id);
+        if ($u->foto != "default.png") {
+            Storage::disk('public_uploads')->delete('avatar/'.$u->foto);
+        }
+        $u->delete();
 
         return back()->with('success', 'BERHASIL DIHAPUS');
     }

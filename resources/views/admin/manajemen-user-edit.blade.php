@@ -15,12 +15,12 @@
                     <div class="form-group text-center">
 
                         <div class="profile-img-edit position-relative">
-                            @if ($user->foto == 'profile.png')
-                                <img src="{{ asset('assets/images/avatars/01.png') }}" alt="profile-pic"
-                                    class="theme-color-default-img profile-pic rounded-pill avatar-120">
+                            @if ($user->foto == 'default.png')
+                                <img src="{{ asset('f/avatar/default.png') }}" alt="profile-pic"
+                                    class="theme-color-default-img profile-pic rounded-pill avatar-120" style="object-fit: cover">
                             @else
-                                <img src="{{ asset('assets/images/profiles/' . $user->foto) }}" alt="profile-pic"
-                                    class="theme-color-default-img profile-pic rounded-pill avatar-120">
+                                <img src="{{ asset('f/avatar/' . $user->foto) }}" alt="profile-pic"
+                                    class="theme-color-default-img profile-pic rounded-pill avatar-120" style="object-fit: cover">
                             @endif
                         </div>
 
@@ -71,9 +71,9 @@
                                     <label class="form-label">Jenis Kelamin</label>
                                     <select name="jk" class="selectpicker form-control" data-style="py-0">
                                         <option selected disabled>Pilih</option>
-                                        <option value="Laki-laki" {{ $user->jk == 'Laki-laki' ? 'selected' : '' }}>
+                                        <option value="Laki-laki" {{ $user->jk == 'L' ? 'selected' : '' }}>
                                             Laki-laki</option>
-                                        <option value="Perempuan" {{ $user->jk == 'Perempuan' ? 'selected' : '' }}>
+                                        <option value="Perempuan" {{ $user->jk == 'P' ? 'selected' : '' }}>
                                             Perempuan</option>
                                     </select>
                                 </div>

@@ -45,8 +45,11 @@ Route::middleware('auth')->group(function() {
 
     Route::get('/chat', [AdminController::class, 'chat'])->name('chat');
     Route::get('/chat/{id}', [AdminController::class, 'chatUser'])->name('chat-user');
-    Route::post('/chat/{id}', [AdminController::class, 'chatSend'])->name('chat-send');
-    Route::get('/chat/{id}/data', [AdminController::class, 'chatData'])->name('chat-data');
+
+    // hashed url
+    Route::get('/'.md5('chat').'/data', [AdminController::class, 'chatUserData'])->name('chat-user-data');
+    Route::post('/'.md5('chat').'/{id}', [AdminController::class, 'chatSend'])->name('chat-send');
+    Route::get('/'.md5('chat').'/{id}/data', [AdminController::class, 'chatData'])->name('chat-data');
 
     Route::get('/manajemen-user', [AdminController::class, 'manajemenUser'])->name('manajemen.user');
     Route::get('/manajemen-user/edit/{id}', [AdminController::class, 'manajemenUserEdit'])->name('manajemen.user.edit');

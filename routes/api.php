@@ -51,7 +51,7 @@ Route::get('/verify-email', function(Request $req) {
     if (User::where('email', $req->email)->first()) {
         return response()->json([
             'message' => 'Email sudah terdaftar.'
-        ], 401);
+        ], 406);
     }
     return response()->json([
         'message' => 'Email bisa digunakan.'
