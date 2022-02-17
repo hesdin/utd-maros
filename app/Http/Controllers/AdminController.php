@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Chat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use App\Models\golongan;
@@ -200,6 +201,35 @@ class AdminController extends Controller
         $jDonor->delete();
 
         return back()->with('success', 'BERHASIL DIHAPUS');
+    }
+
+    public function chat()
+    {
+        return view('admin.chat.user-list');
+    }
+
+    public function chatUser($id)
+    {
+        $data = User::find($id);
+        return view('admin.chat.index', ['data' => $data]);
+    }
+
+    public function chatSend(Request $req, $id)
+    {
+        $c = new Chat();
+        $c->user = $id;
+        $c->admin = auth()->user()->id;
+        $c->pesan = $req->pesan;
+        $c->pengirim = "admin";
+        if ($c->save()) {
+            return 200;
+        }
+    }
+
+    public function chatData($id)
+    {
+        $data = Chat::where('user', $id)->orderBy('created_at', 'DESC')->get();
+        return view('admin.chat.data', ['data' => $data]);
     }
 
     // MANAJEMEN USER

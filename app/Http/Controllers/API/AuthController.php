@@ -34,6 +34,23 @@ class AuthController extends Controller
 
     public function register(Request $req)
     {
+        $file = $req->file('avatar');
+        if ($file) {
+            $filename = md5($req->username).'.'.$file->getClientOriginalExtension();
+        }
+
+        $u = new User();
+        $u->nama = $req->nama;
+        $u->jk = $req->jk;
+        $u->alamat = $req->alamat;
+        $u->tgl_lahir = $req->tgl_lahir;
+        $u->email = $req->email;
+        $u->password = bcrypt($req->password);
+        if ($file) {
+            $u->foto = $filename;
+            $file->storeAs('avatar', $filename, 'public_uploads');
+        }
+        $u->save();
         return response()->json([
             'message' => 'berhasil mendaftar',
         ], 200);

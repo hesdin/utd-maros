@@ -11,6 +11,7 @@
 
     {{-- CSS --}}
     @include('layouts.css')
+    @stack('styles')
 
 </head>
 
@@ -167,6 +168,8 @@
     <!-- Wrapper End-->
 
     @include('layouts.js')
+
+    @stack('scripts')
 
 </body>
 

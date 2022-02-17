@@ -43,6 +43,11 @@ Route::middleware('auth')->group(function() {
     Route::post('/jadwal-donor', [AdminController::class, 'jadwalDonorTambah'])->name('jadwal.donor.tambah');
     Route::delete('/jadwal-donor/{id}', [AdminController::class, 'jadwalDonorHapus'])->name('jadwal.donor.hapus');
 
+    Route::get('/chat', [AdminController::class, 'chat'])->name('chat');
+    Route::get('/chat/{id}', [AdminController::class, 'chatUser'])->name('chat-user');
+    Route::post('/chat/{id}', [AdminController::class, 'chatSend'])->name('chat-send');
+    Route::get('/chat/{id}/data', [AdminController::class, 'chatData'])->name('chat-data');
+
     Route::get('/manajemen-user', [AdminController::class, 'manajemenUser'])->name('manajemen.user');
     Route::get('/manajemen-user/edit/{id}', [AdminController::class, 'manajemenUserEdit'])->name('manajemen.user.edit');
     Route::put('/manajemen-user/update/{id}', [AdminController::class, 'manajemenUserUpdate'])->name('manajemen.user.update');

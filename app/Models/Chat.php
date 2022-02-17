@@ -17,4 +17,9 @@ class Chat extends Model
     {
         return Carbon::parse($this->created_at)->isoFormat('D MMM YYYY HH:mm');
     }
+
+    public function userPengirim()
+    {
+        return $this->belongsTo(User::class, 'user');
+    }
 }
