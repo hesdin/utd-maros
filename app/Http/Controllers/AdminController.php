@@ -216,7 +216,7 @@ class AdminController extends Controller
 
     public function chatUserData()
     {
-        $u = Chat::orderBy('created_at', 'DESC')->distinct()->get(['user']);
+        $u = Chat::where('admin', auth()->user()->id)->orderBy('created_at', 'DESC')->get()->unique('user');
         return view('admin.chat.user-data', ['users' => $u]);
     }
 
@@ -234,7 +234,7 @@ class AdminController extends Controller
 
     public function chatData($id)
     {
-        $data = Chat::where('user', $id)->orderBy('created_at', 'DESC')->get();
+        $data = Chat::where('user', $id)->where('admin', auth()->user()->id)->orderBy('created_at', 'DESC')->get();
         return view('admin.chat.data', ['data' => $data]);
     }
 

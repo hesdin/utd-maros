@@ -7,6 +7,7 @@ use App\Models\Admin;
 use App\Models\Chat;
 use App\Models\golongan;
 use App\Models\Jadwal;
+use App\Models\Pendonor;
 use App\Models\stok;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -74,6 +75,24 @@ class UserController extends Controller
 
         return response()->json([
             'chat' => $chat,
+        ], 200);
+    }
+
+    public function daftarPendonor(Request $req)
+    {
+        if (substr($req->no_hp, 0, 2) == "08") {
+            $no_hp = "628".substr($req->no_hp, 2);
+        } else {
+            $no_hp = $req->no_hp;
+        }
+        $p = new Pendonor();
+        $p->no_hp = $no_hp;
+        $p->user_id = $req->user_id;
+        $p->golongan_id = $req->golongan_id;
+        $p->save();
+
+        return response()->json([
+            'message' => 'berhasil',
         ], 200);
     }
 

@@ -48,9 +48,11 @@
 
 @push('scripts')
     <script>
-        setInterval(() => {
-            loadData()
-        }, 1000);
+        $(document).ready(function() {
+            setInterval(() => {
+                loadData()
+            }, 1000)
+        })
 
         function loadData() {
             $.ajax({
@@ -63,7 +65,7 @@
         }
 
         function scroll() {
-            $("#MessageList").scrollTop($("#MessageList")[0].scrollHeight);
+            $("#MessageList").scrollTop($("#MessageList")[0].scrollHeight)
         }
 
         function sendChat(e) {

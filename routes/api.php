@@ -21,12 +21,6 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 
-Route::get('/user/{id}', function($id) {
-    return response()->json([
-        'user' => User::find($id)
-    ]);
-});
-
 // Data
 Route::group(['middleware' => 'auth:user'], function () {
     Route::get('/user', function(Request $req) {
@@ -43,6 +37,9 @@ Route::group(['middleware' => 'auth:user'], function () {
     Route::get('/chat', [UserController::class, 'chat']);
     Route::post('/chat', [UserController::class, 'chatSend']);
     Route::get('/chat/{user}/{admin}', [UserController::class, 'chatData']);
+
+    Route::post('/daftar-pendonor', [UserController::class, 'daftarPendonor']);
+
     Route::post('/logout', [AuthController::class, 'logout']);
 });
 

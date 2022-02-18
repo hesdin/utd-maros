@@ -34,8 +34,9 @@
                             <thead>
                                 <tr>
                                     <th>Avatar</th>
-                                    <th>Nama Lengkap</th>
-                                    <th>Email</th>
+                                    <th>Pengirim</th>
+                                    <th>Pesan Terakhir</th>
+                                    <th></th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -54,9 +55,11 @@
 
 @push('scripts')
     <script>
-        setInterval(() => {
-            loadData()
-        }, 1000);
+        $(document).ready(function() {
+            setInterval(() => {
+                loadData()
+            }, 1000)
+        })
 
         function loadData() {
             $.ajax({
