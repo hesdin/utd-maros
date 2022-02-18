@@ -108,9 +108,9 @@
                                 <a class="py-0 nav-link d-flex align-items-center" href="#" id="navbarDropdown"
                                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     @if (Auth::user()->foto == 'profile.png' )
-                                    <img src="{{ asset('assets/images/avatars/01.png') }}" alt="profile" class="img-fluid avatar avatar-45 avatar-rounded">
+                                    <img src="{{ asset('assets/images/avatars/01.png') }}" alt="profile" class="img-fluid avatar avatar-30 avatar-rounded">
                                     @else
-                                    <img src="{{ asset('f/avatar/'.Auth::user()->foto ) }}" alt="profile" class="img-fluid avatar avatar-45 avatar-rounded">
+                                    <img src="{{ asset('f/avatar/'.Auth::user()->foto ) }}" alt="profile" class="img-fluid avatar avatar-30 avatar-rounded">
                                     @endif
 
                                     <div class="caption ms-3 d-none d-md-block ">
