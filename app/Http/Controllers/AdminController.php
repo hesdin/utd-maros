@@ -157,7 +157,7 @@ class AdminController extends Controller
 
     public function dataPendonor()
     {
-        $dPendonor = Pendonor::all();
+        $dPendonor = Pendonor::with('user')->get()->sortBy('user.nama');
 
         return view('admin.data-pendonor', ['dPendonor' => $dPendonor]);
     }
@@ -242,7 +242,7 @@ class AdminController extends Controller
 
     public function manajemenUser()
     {
-        $users = User::all();
+        $users = User::orderBy('nama')->get();
 
         return view('admin.manajemen-user', ['users' => $users]);
     }
