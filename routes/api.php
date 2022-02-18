@@ -44,13 +44,13 @@ Route::group(['middleware' => 'auth:user'], function () {
 });
 
 // Validate Email
-Route::get('/verify-email', function(Request $req) {
-    if (User::where('email', $req->email)->first()) {
+Route::get('/validate-email/{email}', function($email) {
+    if (User::where('email', $email)->first()) {
         return response()->json([
-            'message' => 'Email sudah terdaftar.'
-        ], 406);
+            'message' => 'not valid'
+        ], 200);
     }
     return response()->json([
-        'message' => 'Email bisa digunakan.'
+        'message' => 'valid'
     ], 200);
 });

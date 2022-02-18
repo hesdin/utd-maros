@@ -90,7 +90,7 @@ class AdminController extends Controller
 
     public function stokDarah()
     {
-        $sDarah = stok::orderBy('golongan_id')->get();
+        $sDarah = stok::with('golongan')->get()->sortBy('golongan.nm_golongan');
         $gDarah = golongan::orderBy('nm_golongan')->orderBy('resus_golongan', 'DESC')->get();
         $tGDarah = tipe::all();
 
