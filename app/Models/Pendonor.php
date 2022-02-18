@@ -10,6 +10,8 @@ class Pendonor extends Model
 {
     use HasFactory;
 
+    protected $with = ['golongan'];
+
     public function user()
     {
         return $this->belongsTo(User::class);

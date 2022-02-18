@@ -264,7 +264,9 @@ class AdminController extends Controller
         $user->jk = $request->jk;
         $user->email = $request->email;
         $user->alamat = $request->alamat;
-        $user->password = bcrypt($request->pass);
+        if ($request->pass) {
+            $user->password = bcrypt($request->pass);
+        }
 
 
         if ($request->hasFile('foto')) {
