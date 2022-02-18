@@ -18,9 +18,11 @@ class AdminController extends Controller
 {
     public function Dashboard()
     {
-        $user = User::all();
+        $user = User::all()->count();
+        $pendonor = User::has('pendonor')->get()->count();
+        $stok = stok::get()->sum('jumlah');
 
-        return view('admin.dashboard', ['user' => $user]);
+        return view('admin.dashboard', ['user' => $user, 'stok' => $stok, 'pendonor' => $pendonor]);
     }
 
     public function dataMaster()
