@@ -7,10 +7,10 @@
             <div class="col-md-12">
                 <div class="flex-wrap d-flex justify-content-between align-items-center">
                     <div>
-                        <h4>Hello Admin!</h4>
-                        <p>We are on a mission to help developers like you build successful projects for FREE.</p>
+                        <h5>Hello Admin!</h5>
+                        <p>Selamat datang di Dashboard Unit Transfusi Darah Kab. Maros.</p>
                     </div>
-                    <div>
+                    <!-- <div>
                         <a href="" class="btn btn-link btn-soft-light">
                             <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.8251 15.2171H12.1748C14.0987 15.2171 15.731 13.985 16.3054 12.2764C16.3887 12.0276 16.1979 11.7713 15.9334 11.7713H14.8562C14.5133 11.7713 14.2362 11.4977 14.2362 11.16C14.2362 10.8213 14.5133 10.5467 14.8562 10.5467H15.9005C16.2463 10.5467 16.5263 10.2703 16.5263 9.92875C16.5263 9.58722 16.2463 9.31075 15.9005 9.31075H14.8562C14.5133 9.31075 14.2362 9.03619 14.2362 8.69849C14.2362 8.35984 14.5133 8.08528 14.8562 8.08528H15.9005C16.2463 8.08528 16.5263 7.8088 16.5263 7.46728C16.5263 7.12575 16.2463 6.84928 15.9005 6.84928H14.8562C14.5133 6.84928 14.2362 6.57472 14.2362 6.23606C14.2362 5.89837 14.5133 5.62381 14.8562 5.62381H15.9886C16.2483 5.62381 16.4343 5.3789 16.3645 5.13113C15.8501 3.32401 14.1694 2 12.1748 2H11.8251C9.42172 2 7.47363 3.92287 7.47363 6.29729V10.9198C7.47363 13.2933 9.42172 15.2171 11.8251 15.2171Z" fill="currentColor"></path>
@@ -18,7 +18,7 @@
                             </svg>
                             Announcements
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -37,121 +37,121 @@
 @section('content')
 <div class="row">
     <div class="col-md-12 col-lg-12">
-       <div class="row row-cols-1">
-          <div class="overflow-hidden d-slider1 ">
-             <ul  class="p-0 m-0 mb-2 swiper-wrapper list-inline">
-                <li class="swiper-slide card card-slide" data-aos="fade-up" data-aos-delay="700">
-                   <div class="card-body">
-                      <div class="progress-widget">
-                         <div id="circle-progress-01" class="text-center circle-progress-01 circle-progress circle-progress-primary" data-min-value="0" data-max-value="100" data-value="90" data-type="percent">
-                            <svg class="card-slie-arrow " width="24" height="24px" viewBox="0 0 24 24">
-                               <path fill="currentColor" d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" />
-                            </svg>
-                         </div>
-                         <div class="progress-detail">
-                            <p  class="mb-2">Total Sales</p>
-                            <h4 class="counter">$560K</h4>
-                         </div>
-                      </div>
-                   </div>
-                </li>
-                <li class="swiper-slide card card-slide" data-aos="fade-up" data-aos-delay="800">
-                   <div class="card-body">
-                      <div class="progress-widget">
-                         <div id="circle-progress-02" class="text-center circle-progress-01 circle-progress circle-progress-info" data-min-value="0" data-max-value="100" data-value="80" data-type="percent">
-                            <svg class="card-slie-arrow " width="24" height="24" viewBox="0 0 24 24">
-                               <path fill="currentColor" d="M19,6.41L17.59,5L7,15.59V9H5V19H15V17H8.41L19,6.41Z" />
-                            </svg>
-                         </div>
-                         <div class="progress-detail">
-                            <p  class="mb-2">Total Profit</p>
-                            <h4 class="counter">$185K</h4>
-                         </div>
-                      </div>
-                   </div>
-                </li>
-                <li class="swiper-slide card card-slide" data-aos="fade-up" data-aos-delay="900">
-                   <div class="card-body">
-                      <div class="progress-widget">
-                         <div id="circle-progress-03" class="text-center circle-progress-01 circle-progress circle-progress-primary" data-min-value="0" data-max-value="100" data-value="70" data-type="percent">
-                            <svg class="card-slie-arrow " width="24" viewBox="0 0 24 24">
-                               <path fill="currentColor" d="M19,6.41L17.59,5L7,15.59V9H5V19H15V17H8.41L19,6.41Z" />
-                            </svg>
-                         </div>
-                         <div class="progress-detail">
-                            <p  class="mb-2">Total Cost</p>
-                            <h4 class="counter">$375K</h4>
-                         </div>
-                      </div>
-                   </div>
-                </li>
-                <li class="swiper-slide card card-slide" data-aos="fade-up" data-aos-delay="1000">
-                   <div class="card-body">
-                      <div class="progress-widget">
-                         <div id="circle-progress-04" class="text-center circle-progress-01 circle-progress circle-progress-info" data-min-value="0" data-max-value="100" data-value="60" data-type="percent">
-                            <svg class="card-slie-arrow " width="24px" height="24px" viewBox="0 0 24 24">
-                               <path fill="currentColor" d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" />
-                            </svg>
-                         </div>
-                         <div class="progress-detail">
-                            <p  class="mb-2">Revenue</p>
-                            <h4 class="counter">$742K</h4>
-                         </div>
-                      </div>
-                   </div>
-                </li>
-                <li class="swiper-slide card card-slide" data-aos="fade-up" data-aos-delay="1100">
-                   <div class="card-body">
-                      <div class="progress-widget">
-                         <div id="circle-progress-05" class="text-center circle-progress-01 circle-progress circle-progress-primary" data-min-value="0" data-max-value="100" data-value="50" data-type="percent">
-                            <svg class="card-slie-arrow " width="24px" height="24px" viewBox="0 0 24 24">
-                               <path fill="currentColor" d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" />
-                            </svg>
-                         </div>
-                         <div class="progress-detail">
-                            <p  class="mb-2">Net Income</p>
-                            <h4 class="counter">$150K</h4>
-                         </div>
-                      </div>
-                   </div>
-                </li>
-                <li class="swiper-slide card card-slide" data-aos="fade-up" data-aos-delay="1200">
-                   <div class="card-body">
-                      <div class="progress-widget">
-                         <div id="circle-progress-06" class="text-center circle-progress-01 circle-progress circle-progress-info" data-min-value="0" data-max-value="100" data-value="40" data-type="percent">
-                            <svg class="card-slie-arrow " width="24" viewBox="0 0 24 24">
-                               <path fill="currentColor" d="M19,6.41L17.59,5L7,15.59V9H5V19H15V17H8.41L19,6.41Z" />
-                            </svg>
-                         </div>
-                         <div class="progress-detail">
-                            <p  class="mb-2">Today</p>
-                            <h4 class="counter">$4600</h4>
-                         </div>
-                      </div>
-                   </div>
-                </li>
-                <li class="swiper-slide card card-slide" data-aos="fade-up" data-aos-delay="1300">
-                   <div class="card-body">
-                      <div class="progress-widget">
-                         <div id="circle-progress-07" class="text-center circle-progress-01 circle-progress circle-progress-primary" data-min-value="0" data-max-value="100" data-value="30" data-type="percent">
-                            <svg class="card-slie-arrow " width="24" viewBox="0 0 24 24">
-                               <path fill="currentColor" d="M19,6.41L17.59,5L7,15.59V9H5V19H15V17H8.41L19,6.41Z" />
-                            </svg>
-                         </div>
-                         <div class="progress-detail">
-                            <p  class="mb-2">Members</p>
-                            <h4 class="counter">11.2M</h4>
-                         </div>
-                      </div>
-                   </div>
-                </li>
-             </ul>
-             <div class="swiper-button swiper-button-next"></div>
-             <div class="swiper-button swiper-button-prev"></div>
-          </div>
-       </div>
+        <div class="row row-cols-1">
+            <div class="overflow-hidden d-slider1 ">
+                <ul class="p-0 m-0 mb-2 swiper-wrapper list-inline">
+                    <li class="swiper-slide card card-slide" data-aos="fade-up" data-aos-delay="700">
+                        <div class="card-body">
+                            <div class="progress-widget">
+                                <div id="circle-progress-01" class="text-center circle-progress-01 circle-progress circle-progress-primary" data-min-value="0" data-max-value="100" data-value="90" data-type="percent">
+                                    <svg class="card-slie-arrow " width="24" height="24px" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" />
+                                    </svg>
+                                </div>
+                                <div class="progress-detail">
+                                    <p class="mb-2">Total Sales</p>
+                                    <h4 class="counter">$560K</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide card card-slide" data-aos="fade-up" data-aos-delay="800">
+                        <div class="card-body">
+                            <div class="progress-widget">
+                                <div id="circle-progress-02" class="text-center circle-progress-01 circle-progress circle-progress-info" data-min-value="0" data-max-value="100" data-value="80" data-type="percent">
+                                    <svg class="card-slie-arrow " width="24" height="24" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M19,6.41L17.59,5L7,15.59V9H5V19H15V17H8.41L19,6.41Z" />
+                                    </svg>
+                                </div>
+                                <div class="progress-detail">
+                                    <p class="mb-2">Total Profit</p>
+                                    <h4 class="counter">$185K</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide card card-slide" data-aos="fade-up" data-aos-delay="900">
+                        <div class="card-body">
+                            <div class="progress-widget">
+                                <div id="circle-progress-03" class="text-center circle-progress-01 circle-progress circle-progress-primary" data-min-value="0" data-max-value="100" data-value="70" data-type="percent">
+                                    <svg class="card-slie-arrow " width="24" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M19,6.41L17.59,5L7,15.59V9H5V19H15V17H8.41L19,6.41Z" />
+                                    </svg>
+                                </div>
+                                <div class="progress-detail">
+                                    <p class="mb-2">Total Cost</p>
+                                    <h4 class="counter">$375K</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide card card-slide" data-aos="fade-up" data-aos-delay="1000">
+                        <div class="card-body">
+                            <div class="progress-widget">
+                                <div id="circle-progress-04" class="text-center circle-progress-01 circle-progress circle-progress-info" data-min-value="0" data-max-value="100" data-value="60" data-type="percent">
+                                    <svg class="card-slie-arrow " width="24px" height="24px" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" />
+                                    </svg>
+                                </div>
+                                <div class="progress-detail">
+                                    <p class="mb-2">Revenue</p>
+                                    <h4 class="counter">$742K</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide card card-slide" data-aos="fade-up" data-aos-delay="1100">
+                        <div class="card-body">
+                            <div class="progress-widget">
+                                <div id="circle-progress-05" class="text-center circle-progress-01 circle-progress circle-progress-primary" data-min-value="0" data-max-value="100" data-value="50" data-type="percent">
+                                    <svg class="card-slie-arrow " width="24px" height="24px" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" />
+                                    </svg>
+                                </div>
+                                <div class="progress-detail">
+                                    <p class="mb-2">Net Income</p>
+                                    <h4 class="counter">$150K</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide card card-slide" data-aos="fade-up" data-aos-delay="1200">
+                        <div class="card-body">
+                            <div class="progress-widget">
+                                <div id="circle-progress-06" class="text-center circle-progress-01 circle-progress circle-progress-info" data-min-value="0" data-max-value="100" data-value="40" data-type="percent">
+                                    <svg class="card-slie-arrow " width="24" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M19,6.41L17.59,5L7,15.59V9H5V19H15V17H8.41L19,6.41Z" />
+                                    </svg>
+                                </div>
+                                <div class="progress-detail">
+                                    <p class="mb-2">Today</p>
+                                    <h4 class="counter">$4600</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide card card-slide" data-aos="fade-up" data-aos-delay="1300">
+                        <div class="card-body">
+                            <div class="progress-widget">
+                                <div id="circle-progress-07" class="text-center circle-progress-01 circle-progress circle-progress-primary" data-min-value="0" data-max-value="100" data-value="30" data-type="percent">
+                                    <svg class="card-slie-arrow " width="24" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M19,6.41L17.59,5L7,15.59V9H5V19H15V17H8.41L19,6.41Z" />
+                                    </svg>
+                                </div>
+                                <div class="progress-detail">
+                                    <p class="mb-2">Members</p>
+                                    <h4 class="counter">11.2M</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="swiper-button swiper-button-next"></div>
+                <div class="swiper-button swiper-button-prev"></div>
+            </div>
+        </div>
     </div>
 
 
- </div>
- @endsection
+</div>
+@endsection

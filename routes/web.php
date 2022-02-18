@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function() {
+Route::get('/', function () {
     return redirect()->route('dashboard');
 });
 
-Route::middleware('auth')->group(function() {
+Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 
     Route::get('/golongan', [AdminController::class, 'golongan'])->name('golongan');
@@ -51,15 +51,19 @@ Route::middleware('auth')->group(function() {
     Route::put('/manajemen-user/update/{id}', [AdminController::class, 'manajemenUserUpdate'])->name('manajemen.user.update');
 
     Route::delete('/manajemen-user/{id}', [AdminController::class, 'manajemenUserHapus'])->name('manajemen.user.hapus');
+    Route::get('/profile', [AdminController::class, 'profile'])->name('profile');
+    Route::put('/profile/{id}', [AdminController::class, 'profileUpdate'])->name('profile.update');
+
+
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
 // hashed url for ajax
-Route::middleware('auth')->group(function() {
-    Route::get('/'.md5('chat').'/data', [AdminController::class, 'chatUserData'])->name('chat-user-data');
-    Route::post('/'.md5('chat').'/{id}', [AdminController::class, 'chatSend'])->name('chat-send');
-    Route::get('/'.md5('chat').'/{id}/data', [AdminController::class, 'chatData'])->name('chat-data');
+Route::middleware('auth')->group(function () {
+    Route::get('/' . md5('chat') . '/data', [AdminController::class, 'chatUserData'])->name('chat-user-data');
+    Route::post('/' . md5('chat') . '/{id}', [AdminController::class, 'chatSend'])->name('chat-send');
+    Route::get('/' . md5('chat') . '/{id}/data', [AdminController::class, 'chatData'])->name('chat-data');
 });
 
 Route::middleware('guest')->group(function () {

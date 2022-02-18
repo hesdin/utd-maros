@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use App\Models\Chat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -292,10 +293,42 @@ class AdminController extends Controller
     {
         $u = User::find($id);
         if ($u->foto != "default.png") {
-            Storage::disk('public_uploads')->delete('avatar/'.$u->foto);
+            Storage::disk('public_uploads')->delete('avatar/' . $u->foto);
         }
         $u->delete();
 
         return back()->with('success', 'BERHASIL DIHAPUS');
+    }
+
+    public function profile()
+    {
+        return view('admin.profile');
+    }
+
+    public function profileUpdate(Request $request, $id)
+    {
+        $admin = Admin::findOrFail($id);
+
+        $admin->name = $request->nama;
+        $admin->email = $request->email;
+        $admin->password = bcrypt($request->pass);
+
+        if ($request->hasFile('foto')) {
+            $destination = public_path('f/avatar/' . $admin->foto);
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+
+            $foto = $request->file('foto');
+            $extention = $foto->getClientOriginalExtension();
+            $namaFoto = time() . '-' . $request->nama . '.' . $extention;
+            $foto->move(public_path('f/avatar'), $namaFoto);
+
+            $admin->foto = $namaFoto;
+        }
+
+        $admin->update();
+
+        return back()->with('success', 'Berhasil diupdate');
     }
 }

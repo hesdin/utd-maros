@@ -38,7 +38,7 @@
                 </svg>
             </i>
         </a>
-        <ul class="sub-nav collapse" id="sidebar-maps" data-bs-parent="#sidebar-menu" style="">
+        <ul class="sub-nav collapse" id="sidebar-maps" data-bs-parent="#sidebar-menu">
             <li class="nav-item">
                 <a class="nav-link {{ request()->is('golongan') ? 'active' : '' }}" href="{{ route('golongan') }}">
                     <i class="icon">

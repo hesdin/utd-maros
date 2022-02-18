@@ -107,15 +107,19 @@
                             <li class="nav-item dropdown">
                                 <a class="py-0 nav-link d-flex align-items-center" href="#" id="navbarDropdown"
                                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="{{ asset('f/avatar/'.auth()->user()->foto) }}" alt="User-Profile"
-                                        class="img-fluid avatar avatar-30 avatar-rounded">
+                                    @if (Auth::user()->foto == 'profile.png' )
+                                    <img src="{{ asset('assets/images/avatars/01.png') }}" alt="profile" class="img-fluid avatar avatar-45 avatar-rounded">
+                                    @else
+                                    <img src="{{ asset('f/avatar/'.Auth::user()->foto ) }}" alt="profile" class="img-fluid avatar avatar-45 avatar-rounded">
+                                    @endif
+
                                     <div class="caption ms-3 d-none d-md-block ">
                                         <h6 class="mb-0 caption-title">{{ auth()->user()->name }}</h6>
                                         <p class="mb-0 caption-sub-title">{{ auth()->user()->email }}</p>
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="../dashboard/app/user-profile.html">Profile</a>
+                                    <li><a class="dropdown-item" href="{{ route('profile') }}">Profile</a>
                                     </li>
                                     <li>
                                         <hr class="dropdown-divider">
