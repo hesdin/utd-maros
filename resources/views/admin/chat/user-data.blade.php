@@ -13,6 +13,6 @@
     </tr>
 @empty
     <tr>
-        <td colspan="4" class="text-center">Tidak ada data</td>
+        <td colspan="4" class="text-center">Tidak ada pesan</td>
     </tr>
 @endforelse
