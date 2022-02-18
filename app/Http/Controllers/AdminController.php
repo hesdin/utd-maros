@@ -18,7 +18,9 @@ class AdminController extends Controller
 {
     public function Dashboard()
     {
-        return view('admin.dashboard');
+        $user = User::all();
+
+        return view('admin.dashboard', ['user' => $user]);
     }
 
     public function dataMaster()
