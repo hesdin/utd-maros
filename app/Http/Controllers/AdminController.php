@@ -313,7 +313,9 @@ class AdminController extends Controller
 
         $admin->name = $request->nama;
         $admin->email = $request->email;
-        $admin->password = bcrypt($request->pass);
+        if ($request->pass) {
+            $admin->password = bcrypt($request->pass);
+        }
 
         if ($request->hasFile('foto')) {
             $destination = public_path('f/avatar/' . $admin->foto);

@@ -15,6 +15,11 @@ class Chat extends Model
 
     public function getSentAtAttribute()
     {
+        if ($this->created_at->isToday()) {
+            return "Hari ini " . Carbon::parse($this->created_at)->isoFormat('HH:mm');
+        } elseif ($this->created_at->isYesterday()) {
+            return "Kemarin " . Carbon::parse($this->created_at)->isoFormat('HH:mm');
+        }
         return Carbon::parse($this->created_at)->isoFormat('D MMM YYYY HH:mm');
     }
 
