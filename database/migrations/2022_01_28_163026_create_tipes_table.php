@@ -15,7 +15,7 @@ class CreateTipesTable extends Migration
     {
         Schema::create('tipes', function (Blueprint $table) {
             $table->id();
-            $table->string('nm_type');
+            $table->string('nm_type')->unique();
             $table->string('skt_type');
             $table->timestamps();
         });

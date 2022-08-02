@@ -41,6 +41,11 @@ class AdminController extends Controller
 
     public function golonganTambah(Request $request)
     {
+        $c = golongan::where('nm_golongan', $request->nama)->where('resus_golongan', $request->resus)->first();
+
+        if ($c) {
+            return back()->with('fail', 'GAGAL DITAMBAHKAN');
+        }
 
         $golonganDarah = new golongan();
 
@@ -72,14 +77,18 @@ class AdminController extends Controller
 
     public function tipeGolonganTambah(Request $request)
     {
-        $tGDarah = new tipe();
+        try {
+            $tGDarah = new tipe();
 
-        $tGDarah->nm_type = $request->nama;
-        $tGDarah->skt_type = $request->singkatan;
+            $tGDarah->nm_type = $request->nama;
+            $tGDarah->skt_type = $request->singkatan;
 
-        $tGDarah->save();
+            $tGDarah->save();
 
-        return back()->with('success', 'BERHASIL DITAMBAHKAN');
+            return back()->with('success', 'BERHASIL DITAMBAHKAN');
+        } catch (\Throwable $th) {
+            return back()->with('fail', 'GAGAL DITAMBAHKAN');
+        }
     }
 
     public function tipeGolonganHapus($id)
@@ -110,13 +119,20 @@ class AdminController extends Controller
 
     public function stokDarahTambah(Request $request)
     {
-        $sDarah = new stok();
+        $c = Stok::where('golongan_id', $request->golongan)->where('tipe_id', $request->tipe)->first();
 
-        $sDarah->golongan_id = $request->golongan;
-        $sDarah->tipe_id = $request->tipe;
-        $sDarah->jumlah = $request->jumlah;
+        if ($c) {
+            $c->jumlah = $c->jumlah + $request->jumlah;
+            $c->save();
+        } else {
+            $sDarah = new stok();
 
-        $sDarah->save();
+            $sDarah->golongan_id = $request->golongan;
+            $sDarah->tipe_id = $request->tipe;
+            $sDarah->jumlah = $request->jumlah;
+            $sDarah->save();
+        }
+
 
         return back()->with('success', 'BERHASIL DITAMBAHKAN');
     }

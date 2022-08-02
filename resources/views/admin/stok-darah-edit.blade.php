@@ -60,7 +60,7 @@
 
                                 <div class="form-group">
                                     <label class="form-label" for="jumlah">Jumlah</label>
-                                    <input type="text" class="form-control" name="jumlah" value="{{ $sDarah->jumlah }}">
+                                    <input type="text" class="form-control" name="jumlah" value="{{ $sDarah->jumlah }}" autocomplete="off">
                                 </div>
 
                             </div>

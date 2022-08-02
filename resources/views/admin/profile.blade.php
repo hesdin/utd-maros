@@ -7,9 +7,6 @@
     <div class="col-xl-4 col-lg-4">
         <div class="card">
             <div class="card-header d-flex justify-content-between">
-                {{-- <div class="header-title">
-        <h4 class="card-title">Foto Profile</h4>
-       </div> --}}
             </div>
             <div class="card-body">
                 <div class="form-group text-center">
@@ -60,11 +57,11 @@
 
                             <div class="form-group col-md-12">
                                 <label class="form-label">Nama</label>
-                                <input type="text" class="form-control" name="nama" value="{{ Auth::user()->name }}">
+                                <input type="text" class="form-control" name="nama" value="{{ Auth::user()->name }}" autocomplete="off">
                             </div>
                             <div class="form-group col-md-12">
                                 <label class="form-label">Email</label>
-                                <input type="text" class="form-control" name="email" value="{{ Auth::user()->email }}">
+                                <input type="text" class="form-control" name="email" value="{{ Auth::user()->email }}" autocomplete="off">
                             </div>
 
                             <div class="form-group col-md-12">

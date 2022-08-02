@@ -58,7 +58,7 @@
 
                                 <div class="form-group col-md-12">
                                     <label class="form-label">Nama</label>
-                                    <input type="text" class="form-control" name="nama" value="{{ $user->nama }}">
+                                    <input type="text" class="form-control" name="nama" value="{{ $user->nama }}" autocomplete="off">
                                 </div>
 
                                 <div class="form-group">
@@ -80,13 +80,13 @@
 
                                 <div class="form-group col-md-12">
                                     <label class="form-label">Email</label>
-                                    <input type="text" class="form-control" name="email" value="{{ $user->email }}">
+                                    <input type="text" class="form-control" name="email" value="{{ $user->email }}" autocomplete="off">
                                 </div>
 
 
                                 <div class="form-group col-md-12">
                                     <label class="form-label">Alamat</label>
-                                    <input type="text" class="form-control" name="alamat" value="{{ $user->alamat }}">
+                                    <input type="text" class="form-control" name="alamat" value="{{ $user->alamat }}" autocomplete="off">
                                 </div>
 
                                 <div class="form-group col-md-12">

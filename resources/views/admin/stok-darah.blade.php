@@ -159,7 +159,7 @@
 
                         <div class="form-group">
                             <label class="form-label" for="jumlah">Jumlah</label>
-                            <input type="text" class="form-control" name="jumlah">
+                            <input type="text" class="form-control" name="jumlah" autocomplete="off">
                         </div>
 
                 </div>
